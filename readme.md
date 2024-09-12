@@ -1,87 +1,100 @@
-# Introduction
-This analytical tool is designed for analyzing comments on YouTube videos using VADER sentiment analysis and BERTopic for topic modeling.
+# YouTube Comments Analysis Tool
+
+This analytical tool is designed for analyzing comments on YouTube videos using **VADER sentiment analysis** and **BERTopic** for topic modeling.
 
 <img src='GUI.png'>
 
-You can download YouTube comments as .xlsx/.csv file using my YouTube-Comment-Extractor(https://github.com/HenryKong112/HenryKong112-YouTube-Comment-Extractor).
+You can download YouTube comments as `.xlsx` or `.csv` files using the [YouTube Comment Extractor](https://github.com/HenryKong112/HenryKong112-YouTube-Comment-Extractor).
 
-You can merge several excel/csv file into one using my EXCEL-CSV-MERGER(https://github.com/HenryKong112/EXCEL-CSV-MERGER).
+Additionally, you can merge multiple Excel or CSV files into one using the [EXCEL-CSV-MERGER](https://github.com/HenryKong112/EXCEL-CSV-MERGER).
 
+---
 
-# Documentation
+## Table of Contents
+- [Documentation](#documentation)
+  - [1. UMAP](#1-umap)
+  - [2. Sentence-transformer](#2-sentence-transformer)
+- [Limitation](#limitation)
+- [Instruction](#instruction)
+  - [1. Select the .xlsx / .csv file containing the comments](#1-select-the-xlsx--csv-file-containing-the-comments)
+  - [2. Sentiment Analysis (VADER)](#2-click-sentiment-analysis-vader)
+  - [3. Topic Modelling (BERTopic)](#3-click-topic-modelling-bertopic)
+
+---
+
+## Documentation
 
 ### 1. UMAP
-
-https://umap-learn.readthedocs.io/en/latest/parameters.html
+Learn more about UMAP parameters at the official [UMAP Documentation](https://umap-learn.readthedocs.io/en/latest/parameters.html).
 
 ### 2. Sentence-transformer
-https://sbert.net/docs/sentence_transformer/pretrained_models.html#semantic-search-models
+Pre-trained models used for semantic search: [Sentence Transformer Models](https://sbert.net/docs/sentence_transformer/pretrained_models.html#semantic-search-models).
 
-# Limitation
+---
 
-- VADER struggles with recognizing negation, idioms, and sarcasm.
-- The Topic Modelling (BERTopic) button might not generate graphs if there aren't enough comments.
-- Analysis is limited to English comments only.
+## Limitation
+- **VADER** struggles with recognizing negation, idioms, and sarcasm.
+- **BERTopic** button might not generate graphs if there aren't enough comments.
+- Analysis is limited to **English comments** only.
 
-# Instruction
+---
 
-### 1. Select the .xlsx / .csv file that contain the comments 
+## Instruction
 
-- Click `Browse` to choose the file
-- OR enter the file path directly in the entry box
+### 1. Select the .xlsx / .csv file containing the comments 
 
-- Data must contains the following column:
+- Click `Browse` to choose the file.
+- OR enter the file path directly in the entry box.
 
-| Column Name  | Data Type | Description                                           |
-|--------------|-----------|-------------------------------------------------------|
-| `PublishedAt` | DATETIME  | The date and time when the comment was originally published. |
-| `Like`       | INTEGER   | The total number of likes (positive ratings) the comment has received. |
-| `Comment` | TEXT      | The text content of the comment.                     |
+Ensure that the file contains the following columns:
 
+| Column Name  | Data Type  | Description                                                    |
+|--------------|------------|----------------------------------------------------------------|
+| `PublishedAt`| DATETIME   | The date and time when the comment was originally published.    |
+| `Like`       | INTEGER    | The total number of likes the comment has received.             |
+| `Comment`    | TEXT       | The text content of the comment.                               |
+
+---
 
 ### 2. Click Sentiment Analysis (VADER)
 
+This option provides:
+- Three **graphs**.
+- A **VADER summary table**.
+- A new **Excel/CSV file** with sentiment classification for each comment.
 
-You will receive three graphs, one VADER summary table, and a new Excel/CSV file containing sentiment classification for each comment.
+#### Graphs:
+1. **Sentiment Distribution**: Count vs. Likes
+2. **Engagement (Likes per Count) by Sentiment**
+3. **Sentiment Trend Over Time**
 
-Graphs:
-
-- Sentiment Distribution: Count vs. Likes
-- Engagement (Likes per Count) by Sentiment
-- Sentiment Trend Over Time
-
-VADER Summary Table Schema:
-
+#### VADER Summary Table Schema:
 | Column Name     | Data Type | Description                                                   |
 |-----------------|-----------|---------------------------------------------------------------|
-| `Sentiment`     | String    | The sentiment category of the data. Can be one of `Positive`, `Negative`, or `Neutral`. |
+| `Sentiment`     | String    | Sentiment category: `Positive`, `Negative`, or `Neutral`.      |
 | `Count`         | Integer   | The total number of occurrences for each sentiment.            |
-| `Likes`         | Integer   | The total number of likes corresponding to each sentiment.     |
-| `Count_Percent` | Float     | The percentage share of each sentiment's occurrence, calculated as a proportion of the total. |
-| `Likes_Percent` | Float     | The percentage share of total likes that each sentiment received. |
-| `Engagement`    | Float     | Number of likes per count.  
+| `Likes`         | Integer   | The total number of likes for each sentiment.                 |
+| `Count_Percent` | Float     | Percentage share of each sentiment's occurrence.               |
+| `Likes_Percent` | Float     | Percentage of total likes received by each sentiment.          |
+| `Engagement`    | Float     | Number of likes per count.                                     |
+
+---
 
 ### 3. Click Topic Modelling (BERTopic)
 
-The pre-trained model used here is `all-MiniLM-L6-v2`,as it is a lot faster in running and still offers good quality. You will see two graphs in your browser.
+The pre-trained model used is `all-MiniLM-L6-v2`, which offers a balance between speed and quality. This option will generate two **graphs** in your browser.
 
-Graphs:
+#### Graphs:
+1. **Topic Word Scores**:
+   - Ranked list of the most relevant words for each topic.
+   - Words with the highest scores represent each topic.
+   - Helps interpret the themes based on dominant words.
 
-- Topic Word Scores
+2. **Intertopic Distance Map**:
+   - A 2D plot showing how distinct or related different topics are.
+   - Topics close together share similarities; those further apart are more distinct.
+   - Circle size represents topic prevalence within the dataset.
 
-    > This chart provides a ranked list of the most relevant words for each topic identified in a topic modeling analysis.
+---
 
-    > Words with the highest scores are considered more representative of the respective topic.
-    
-    > It helps to interpret what each topic is about based on the dominant words associated with it.
-    
-
-
-
-- Intertopic Distance Map
-
-    >This visualization typically uses a 2D plot to show how distinct or related different topics are in terms of their content.
-
-    >Topics that are close together share more similarities, while those further apart are more distinct.
-
-    >The size of the circles representing topics often corresponds to the prevalence of each topic within the dataset.
+Enjoy using the YouTube Comments Analysis Tool!
