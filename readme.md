@@ -6,9 +6,12 @@ This analytical tool is designed for analyzing comments on YouTube videos using 
 
 You can download YouTube comments as `.xlsx` or `.csv` files using the [YouTube Comment Extractor](https://github.com/HenryKong112/HenryKong112-YouTube-Comment-Extractor).
 
+**Watch the demonstration video for YouTube Comment Extractor:** https://www.youtube.com/watch?v=ZpG8ppoPqEI
+
 Additionally, you can merge multiple Excel or CSV files into one using the [EXCEL-CSV-MERGER](https://github.com/HenryKong112/EXCEL-CSV-MERGER).
 
-**Watch the demonstration video:** https://www.youtube.com/watch?v=yt_6PPcy9OI 
+## 🎞️YouTube Comments Analyzer's Demonstration: 
+https://www.youtube.com/watch?v=yt_6PPcy9OI 
 
 ---
 
