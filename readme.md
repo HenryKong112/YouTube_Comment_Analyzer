@@ -8,6 +8,8 @@ You can download YouTube comments as `.xlsx` or `.csv` files using the [YouTube 
 
 Additionally, you can merge multiple Excel or CSV files into one using the [EXCEL-CSV-MERGER](https://github.com/HenryKong112/EXCEL-CSV-MERGER).
 
+**Watch the demonstration video:** https://www.youtube.com/watch?v=yt_6PPcy9OI 
+
 ---
 
 ## Table of Contents
