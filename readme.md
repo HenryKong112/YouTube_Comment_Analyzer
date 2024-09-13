@@ -48,7 +48,13 @@ Pre-trained models used for semantic search: [Sentence Transformer Models](https
 
 ## Instruction
 
-### 1. Select the .xlsx / .csv file containing the comments 
+### 1. Download the files and run 
+```
+$ python3 gui.py
+```
+A Graphical User Interface (GUI) will show up.
+
+### 2. Select the .xlsx / .csv file containing the comments 
 
 - Click `Browse` to choose the file.
 - OR enter the file path directly in the entry box.
@@ -63,7 +69,7 @@ Ensure that the file contains the following columns:
 
 ---
 
-### 2. Click Sentiment Analysis (VADER)
+### 3. Click Sentiment Analysis (VADER)
 
 This option provides:
 - Three **graphs**.
@@ -87,7 +93,7 @@ This option provides:
 
 ---
 
-### 3. Click Topic Modelling (BERTopic)
+### 4. Click Topic Modelling (BERTopic)
 
 The pre-trained model used is `all-MiniLM-L6-v2`, which offers a balance between speed and quality. This option will generate two **graphs** in your browser.
 
