@@ -50,7 +50,7 @@ Pre-trained models used for semantic search: [Sentence Transformer Models](https
 
 ### 1. Download the files and run 
 ```
-$ python3 gui.py
+$ python gui.py
 ```
 A Graphical User Interface (GUI) will show up.
 
