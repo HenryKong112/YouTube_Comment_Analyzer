@@ -51,6 +51,7 @@ Pre-trained models used for semantic search: [Sentence Transformer Models](https
 ### 1. Download the files and run 
 Clone the repository:
 ```bash
+pip install -r requirements.txt
 git clone https://github.com/HenryKong112/YouTube_Comment_Analyzer.git
 cd YouTube_Comment_Analyzer
 ```
